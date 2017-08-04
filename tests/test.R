@@ -21,9 +21,13 @@ library(survey)
 # identify the cross-year individual filename
 cross_year_individual_rds <- 
 	grep( 
-		"cross-year individual(.*)\\.rds$" , 
-		psid_cat$output_filename , 
-		value = TRUE 
+		"cross-year individual" ,
+		list.files( 
+			file.path( getwd() ) , 
+			recursive = TRUE , 
+			full.names = TRUE 
+		) ,
+		value = TRUE
 	)
 
 individual_df <- readRDS( cross_year_individual_rds )
