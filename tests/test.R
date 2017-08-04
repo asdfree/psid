@@ -59,7 +59,7 @@ family_2005_df <-
 fam_2005_variables_to_keep <- 
 	c( 
 		'er25002' ,	# 2005 interview number
-		'er28037' , # 2005 total family income
+		'er28037' 	# 2005 total family income
 		
 	)
 
@@ -71,7 +71,7 @@ family_2015_df <-
 fam_2015_variables_to_keep <-
 	c( 
 		'er60002' ,	# 2015 interview number
-		'er65349' , # 2015 total family income
+		'er65349' 	# 2015 total family income
 	)
 
 individual_df <- individual_df[ fam_2015_variables_to_keep ] ; gc()
