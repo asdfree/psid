@@ -18,14 +18,22 @@ stopifnot( nrow( psid_cat ) > 0 )
 
 library(survey)
 
-psid_df <- readRDS( file.path( getwd() , "2015 main.rds" ) )
+# identify the cross-year individual filename
+cross_year_individual_rds <- 
+	grep( 
+		"cross-year individual(.*)\.rds$" , 
+		psid_cat$output_filename , 
+		value = TRUE 
+	)
+
+psid_df <- readRDS( cross_year_individual_rds )
 
 psid_design <- 
 	svydesign( 
-		~ psu , 
-		strata = ~ stratum , 
+		~ er31997 , 
+		strata = ~ er31996 , 
 		data = psid_df , 
-		weights = ~ weight , 
+		weights = ~ er33275 , 
 		nest = TRUE 
 	)
 psid_design <- 
@@ -124,12 +132,4 @@ psid_srvyr_design %>%
 psid_srvyr_design %>%
 	group_by( ever_smoked_marijuana ) %>%
 	summarize( mean = survey_mean( bmipct , na.rm = TRUE ) )
-
-unwtd.count( ~ never_rarely_wore_bike_helmet , yrbss_design )
-
-svytotal( ~ one , subset( yrbss_design , !is.na( never_rarely_wore_bike_helmet ) ) )
- 
-svymean( ~ never_rarely_wore_bike_helmet , yrbss_design , na.rm = TRUE )
-
-svyciprop( ~ never_rarely_wore_bike_helmet , yrbss_design , na.rm = TRUE , method = "beta" )
 
