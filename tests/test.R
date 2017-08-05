@@ -63,7 +63,7 @@ fam_2005_variables_to_keep <-
 		
 	)
 
-individual_df <- individual_df[ ind_variables_to_keep ] ; gc()
+family_2005_df <- family_2005_df[ fam_2005_variables_to_keep ] ; gc()
 
 family_2015_df <- 
 	readRDS( file.path( getwd() , "family files/2015.rds" ) )
@@ -74,7 +74,7 @@ fam_2015_variables_to_keep <-
 		'er65349' 	# 2015 total family income
 	)
 
-individual_df <- individual_df[ fam_2015_variables_to_keep ] ; gc()
+family_2015_df <- family_2015_df[ fam_2015_variables_to_keep ] ; gc()
 
 ind_fam_2005 <- 
 	merge( 
