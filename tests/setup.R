@@ -14,9 +14,9 @@ psid_cat <-
 		your_password = my_password )
 
 # download the microdata to your local computer
-lodown( "psid" , psid_cat , 
-	your_email = my_email_address , 
-	your_password = my_password )
+
+
+
 
 options( survey.lonely.psu = "adjust" )
 
