@@ -4,7 +4,7 @@ Title: psid
 Version: 0.1.0
 Author: Anthony Joseph Damico
 Maintainer: Anthony Joseph Damico <ajdamico@gmail.com>
-Description: A continuous integration package, tested on ajdamico/asdfree commit 92048e537fe8c95c8940fa0b6efcb3b7732a565c ajdamico/lodown commit 3c46fb194d31cfac3f93dc8391926518593240a8
+Description: A continuous integration package, tested on ajdamico/asdfree commit 92048e537fe8c95c8940fa0b6efcb3b7732a565c ajdamico/lodown commit 4487aa462501185312c0749c81a86aa53226c8d5
 License: GPL-3
 Imports: survey, lodown, srvyr
 Encoding: UTF-8
